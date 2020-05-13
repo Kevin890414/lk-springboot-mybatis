@@ -1,0 +1,9 @@
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (18, 'xdclass', '10010000', '2019-04-23 23:45:21', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (19, 'xdclass', '10010000', '2019-04-23 23:45:40', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (20, 'xdclass', '10010000', '2019-04-23 23:46:56', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (21, 'xdclass', '10010000', '2019-04-23 23:46:56', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (22, 'xdclass', '10010000', '2019-04-23 23:46:57', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (23, 'xdclass', '10010000', '2019-04-23 23:46:57', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (24, 'xdclass', '10010000', '2019-04-23 23:46:57', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (25, 'xdclass', '10010000', '2019-04-23 23:46:57', 11);
+INSERT INTO `user_el`(`id`, `name`, `phone`, `create_time`, `age`) VALUES (26, 'xdclass', '10010000', '2019-04-23 23:46:57', 11);
