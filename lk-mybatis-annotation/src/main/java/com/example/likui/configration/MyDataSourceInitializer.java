@@ -1,11 +1,10 @@
-package com.example.demo.config;
+package com.example.likui.configration;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.init.DataSourceInitializer;
 import org.springframework.jdbc.datasource.init.DatabasePopulator;
@@ -18,13 +17,13 @@ import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 * @version 1.0
 *
 */
-@Configuration
+//@Configuration
 public class MyDataSourceInitializer implements InitializingBean{
-	@Value("classpath:dev/schema1.sql")
+	@Value("classpath:dev/sql/schema1.sql")
 	private Resource schemaScript;
-	@Value("classpath:dev/data1.sql")
+	@Value("classpath:dev/sql/data1.sql")
     private Resource dataScript1;
-	@Value("classpath:dev/data2.sql")
+	@Value("classpath:dev/sql/data2.sql")
 	private Resource dataScript2;
 
     @Bean
@@ -47,6 +46,6 @@ public class MyDataSourceInitializer implements InitializingBean{
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
+		
 	}
 }

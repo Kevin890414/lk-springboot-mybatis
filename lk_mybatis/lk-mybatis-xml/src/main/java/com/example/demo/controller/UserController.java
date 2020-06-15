@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +23,7 @@ import com.example.demo.service.UserService;
 */
 @RestController
 public class UserController {
+	private static final String module = UserController.class.getName();
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
@@ -28,8 +31,14 @@ public class UserController {
 	
 	
 	@RequestMapping("queryAll")
-	public List<UserEntity> queryAllUserList() {
+	public List<UserEntity> queryAllUserList(HttpServletRequest request) {
 		List<UserEntity> list = userService.queryAllUser();
+		
+		log.info("查询结果"+list,module);
+		
+		HttpSession session = request.getSession();
+		session.getId();
+		log.info("页面1sessionId"+session.getId(),module);
 		
 		return list;
 	}
@@ -37,14 +46,11 @@ public class UserController {
 	
 	
 	public static void main(String[] args) {
-		String str1 = "123";
-		String str2 = "123";
-		String str3 = new String("123");
-		String str4 = new String("123");
-		System.out.println(str1==str2);
-		System.out.println(str1==str3);
-		System.out.println(str1.equals(str2));
-		System.out.println(str1.equals(str3));
-		System.out.println(str3.equals(str4));
+		System.out.println(Math.round(-1.63f));
+		System.out.println(Math.round(1.53d));
+		System.out.println(Math.round(1.63f));
+		System.out.println(Math.random());
+		System.out.println(Math.random()*1000);
+		
 	}
 }
