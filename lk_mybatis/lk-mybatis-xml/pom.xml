@@ -55,13 +55,10 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!--可以引入日志 @Slf4j注解-->
-		<!-- <dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<scope>provided</scope>
-		</dependency> -->
-		
+		<!--可以引入日志 @Slf4j注解 -->
+		<!-- <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> 
+			<scope>provided</scope> </dependency> -->
+
 		<!-- stfp依赖 -->
 		<!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
 		<dependency>
@@ -69,7 +66,7 @@
 			<artifactId>jsch</artifactId>
 			<version>0.1.54</version>
 		</dependency>
-		
+
 		<!--数据导出依赖 excel -->
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -89,17 +86,24 @@
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.17</version>
 		</dependency>
-		
+
 		<!-- 发送邮件email插件 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
+		</dependency>
+
+		<!-- pdf依赖包 https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.12</version>
 		</dependency>
 
 	</dependencies>

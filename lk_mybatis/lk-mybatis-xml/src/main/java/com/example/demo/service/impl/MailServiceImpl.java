@@ -14,6 +14,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.service.MailService;
 
@@ -23,7 +24,7 @@ import com.example.demo.service.MailService;
  * @author liyy
  * @date 2018-07-18 14:22
  */
-@Component
+@Service
 public class MailServiceImpl implements MailService{
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());

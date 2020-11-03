@@ -14,31 +14,13 @@ import java.util.UUID;
 */
 public class JavaTest1 {
 
-	public static synchronized String getPrimaryKey(int length) {
-		StringBuffer buff = new StringBuffer();
-		int lth = 0;
-		String strTmp = null;
-		while (length > lth) {
-			strTmp = UUID.randomUUID().toString();
-			strTmp = strTmp.replaceAll("-", "");
-			buff.append(strTmp);
-			lth += strTmp.length();
-		}
-		return buff.toString().substring(0, length - 1);
-	}
-	
 	public static void main(String[] args) {
-//		String primaryKey = getPrimaryKey(1);
-//		System.out.println(primaryKey);
 		
-//		Random random = new Random();
-//		for (int i = 0; i < 100; i++) {
-//			int nextInt = random.nextInt(10000);
-//			System.out.println(nextInt);
-//		}
+		int i = 2;
+		int a = i++;
+		int b = ++i;
 		
-		Map<String,Object> map = new HashMap<>();
-		BigDecimal bg = (BigDecimal)map.get("test");
-		System.out.println(bg);
+		System.out.println(a);
+		System.out.println(b);
 	}
 }

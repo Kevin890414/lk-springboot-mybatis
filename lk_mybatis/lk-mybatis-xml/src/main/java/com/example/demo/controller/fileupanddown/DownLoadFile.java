@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DownLoadFile {
 	
 	@RequestMapping( value = "/download1", method = RequestMethod.GET )
-	public void testDownload( HttpServletResponse res ) {
+	public void testDownload(HttpServletResponse res ) {
 	    String fileName = "E:\\excel\\用户信息20190830.xls";
 	    
 //	    res.setHeader("content-type", "application/octet-stream");
