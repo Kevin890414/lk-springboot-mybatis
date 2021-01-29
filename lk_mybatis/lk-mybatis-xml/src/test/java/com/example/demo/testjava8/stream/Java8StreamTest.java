@@ -1,12 +1,11 @@
 package com.example.demo.testjava8.stream;
 
-import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,9 +21,9 @@ import com.example.demo.utils.UtilMisc;
  */
 public class Java8StreamTest {
 	
-	/**   
+	/** 
+	 * @Description: 合并两个list<map>,并将userId相同的其它属性合并  
 	 * @Title: mergeList   
-	 * @Description: 合并两个list<map>,并将userId相同的其它属性合并
 	 * @param: @return      
 	 * @return: List<Map<String,Object>>      
 	 * @throws   
@@ -124,6 +123,54 @@ public class Java8StreamTest {
 
 		return null;
 	}
+	
+	/**   
+	 * @Description: 测试使用flatMap
+	 * @Title: testFlatMap   
+	 * @return: void      
+	 * @throws   
+	 */  
+	public static void testFlatMap(){
+        List<String> teamIndia = Arrays.asList("Virat", "Dhoni", "Jadeja");
+        List<String> teamAustralia = Arrays.asList("Warner", "Watson", "Smith");
+        List<String> teamEngland = Arrays.asList("Alex", "Bell", "Broad");
+        List<String> teamNewZeland = Arrays.asList("Kane", "Nathan", "Vettori");
+        List<String> teamSouthAfrica = Arrays.asList("AB", "Amla", "Faf");
+        List<String> teamWestIndies = Arrays.asList("Sammy", "Gayle", "Narine");
+        List<String> teamSriLanka = Arrays.asList("Mahela", "Sanga", "Dilshan");
+        List<String> teamPakistan = Arrays.asList("Misbah", "Afridi", "Shehzad");
+        
+        List<List<String>> playersInWorldCup2016 = new ArrayList<>();
+        playersInWorldCup2016.add(teamIndia);
+        playersInWorldCup2016.add(teamAustralia);
+        playersInWorldCup2016.add(teamEngland);
+        playersInWorldCup2016.add(teamNewZeland);
+        playersInWorldCup2016.add(teamSouthAfrica);
+        playersInWorldCup2016.add(teamWestIndies);
+        playersInWorldCup2016.add(teamSriLanka);
+        playersInWorldCup2016.add(teamPakistan);
+        
+        // Let's print all players before Java 8
+        List<String> listOfAllPlayers = new ArrayList<>();
+        
+        for(List<String> team : playersInWorldCup2016){
+            for(String name : team){
+                listOfAllPlayers.add(name);
+            }
+        }
+        
+        System.out.println("Players playing in world cup 2016");
+        System.out.println(listOfAllPlayers);
+        
+        
+        // Now let's do this in Java 8 using FlatMap
+        List<String> flatMapList = playersInWorldCup2016.stream()
+                                                        .flatMap(pList -> pList.stream())
+                                                        .collect(Collectors.toList());
+        
+        System.out.println("List of all Players using Java 8");
+        System.out.println(flatMapList);
+	}
 
 	
 //	public static List<Map<String,Object>> sumListMapKey(){
@@ -146,6 +193,19 @@ public class Java8StreamTest {
 //		
 //		return list;
 //	}
+	
+	public static String getName() {
+		return "123";
+	}
+	
+	public static String formatName(String name) {
+		
+		
+		long count = name.chars().filter(e-> Character.isLowerCase(e)).count();
+		
+		
+		return name+"456";
+	}
 	
 	
 	public static void main(String[] args) {
@@ -183,8 +243,10 @@ public class Java8StreamTest {
 //		System.out.println(sumListMapKey());
 		
 		LocalDateTime now = LocalDateTime.now();
-		LocalDateTime minusDays = now.minusDays(559);
+		LocalDateTime minusDays = now.minusDays(544);
 		System.out.println(minusDays);
+		
+//		testFlatMap();
 		
 		
 	}

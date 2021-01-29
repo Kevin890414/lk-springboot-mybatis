@@ -16,6 +16,7 @@ public class UserEntity {
 	private String passWord;
 	private UserSexEnum userSex;
 	private String nickName;
+	
 	public Long getId() {
 		return id;
 	}

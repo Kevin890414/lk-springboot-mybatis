@@ -23,7 +23,6 @@ import com.example.demo.service.UserService;
 */
 @RestController
 public class UserController {
-	private static final String module = UserController.class.getName();
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 	
 	@Autowired
@@ -34,11 +33,11 @@ public class UserController {
 	public List<UserEntity> queryAllUserList(HttpServletRequest request) {
 		List<UserEntity> list = userService.queryAllUser();
 		
-		log.info("查询结果"+list,module);
+		log.info("查询结果"+list);
 		
 		HttpSession session = request.getSession();
 		session.getId();
-		log.info("页面1sessionId"+session.getId(),module);
+		log.info("页面1sessionId"+session.getId());
 		
 		return list;
 	}
