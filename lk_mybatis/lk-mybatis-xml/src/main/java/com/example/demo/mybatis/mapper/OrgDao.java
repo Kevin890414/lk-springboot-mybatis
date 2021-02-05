@@ -19,12 +19,12 @@ public class OrgDao {
 		String driver = "com.mysql.jdbc.Driver";
 		
 		//URL指向要访问的数据库名mydata
-		String dburl = "jdbc:mysql://192.168.30.37:3306/sfrz_tianjin8338?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false";//链接的mysql
+		String dburl = "jdbc:mysql://127.0.0.1:3306/sfrz_tianjin8338?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false";//链接的mysql
 		//MySQL配置时的用户名
-		String user = "iap";
+		String user = "root";
 		
 		//MySQL配置时的密码
-		String password = "iap2019";
+		String password = "123456";
 		
 		List<Org> list = new LinkedList<Org>();
 		
@@ -42,7 +42,7 @@ public class OrgDao {
 		    //2.创建statement类对象，用来执行SQL语句！！
 		    Statement statement = con.createStatement();
 		    //要执行的SQL语句
-		    String sql = "select * from tjorginfo_dg";
+		    String sql = "select b.PARTY_ID orgId,b.GROUP_NAME orgName,c.PARTY_ID parentOrgId,c.GROUP_NAME parentOrgName,b.OPERATING_LEVEL orgLevel, b.OPERATING_LEVEL orgLevelName from party_relationship a inner join party_group b on a.PARTY_ID_FROM = b.PARTY_ID and a.PARTY_RELATIONSHIP_TYPE_ID='PARENT_MANAGE' left join party_group c on a.PARTY_ID_TO = c.PARTY_ID ;";
 		    
 		    //3.ResultSet类，用来存放获取的结果集！！
 		    ResultSet rs = statement.executeQuery(sql);
@@ -52,8 +52,8 @@ public class OrgDao {
 		        String orgName = rs.getString("orgName");
 		        String parentOrgId = rs.getString("parentOrgId");
 		        String parentOrgName = rs.getString("parentOrgName");
-		        String numId = rs.getString("numId");
-		        String treeId = rs.getString("treeId");
+//		        String numId = rs.getString("numId");
+//		        String treeId = rs.getString("treeId");
 		        String orgLevel = rs.getString("orgLevel");
 		        String orgLevelName = rs.getString("orgLevelName");
 		        
@@ -62,8 +62,8 @@ public class OrgDao {
 		       org.setOrgName(orgName);
 		       org.setParentOrgId(parentOrgId);
 		       org.setParentOrgName(parentOrgName);
-		       org.setNumId(numId);
-		       org.setTreeId(treeId);
+//		       org.setNumId(numId);
+//		       org.setTreeId(treeId);
 		       org.setOrgLevel(orgLevel);
 		       org.setOrgLevelName(orgLevelName);
 		      

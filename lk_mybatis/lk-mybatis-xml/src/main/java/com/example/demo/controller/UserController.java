@@ -22,6 +22,7 @@ import com.example.demo.service.UserService;
 *
 */
 @RestController
+@RequestMapping("/user")
 public class UserController {
 	private static final Logger log = LoggerFactory.getLogger(UserController.class);
 	

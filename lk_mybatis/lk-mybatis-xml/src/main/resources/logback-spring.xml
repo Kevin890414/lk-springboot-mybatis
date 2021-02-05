@@ -2,6 +2,10 @@
 
         <!--  注意文件名称不是logback.xml，想使用spring扩展profile支持，要以logback-spring.xml命名-->
 <configuration>
+	 <!-- 定义日志的根目录 -->
+    <property name="LOG_HOME" value="/app/log" />
+     <!-- 定义日志级别-->
+    <property name="logging.level" value="debug" />
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{80} -  %msg%n</Pattern>
@@ -87,7 +91,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.example.demo.service" level="info">
+    <logger name="com.example.demo" level="info">
     	<appender-ref ref="STDOUT" />
     	<appender-ref ref="ROOT-APPENDER"/>
         <appender-ref ref="ERROR-APPENDER"/>

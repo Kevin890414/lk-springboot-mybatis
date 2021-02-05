@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.beans.Org;
 import com.example.demo.mybatis.mapper.OrgDao;
 @RestController
+@RequestMapping("/org")
 public class OrgTreeController {
 	
 	/**
